@@ -32,26 +32,19 @@ public class MainActivityTest {
     public void registerIdlingResource() {
 
     }
-
     @Test
     public void save() throws Exception {
-
         String str = "LWD";
         onView(withId(R.id.edt_test)).perform(typeText(str),closeSoftKeyboard());
         onView(withId(R.id.btn_save)).perform(click());
         onView(withId(R.id.tv_test)).check(matches(withText(str)));
-
-
-
     }
     @Test
     public void clear() throws Exception{
         onView(withId(R.id.btn_clear)).perform(click());
-
         //校验 该组件是否匹配空字符
         onView(withId(R.id.tv_test)).check(matches(withText("")));
     }
-
     @After
     public void unregisterIdlingResource() {
 
